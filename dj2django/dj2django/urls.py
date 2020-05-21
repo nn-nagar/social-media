@@ -17,12 +17,9 @@ from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import RedirectView
 
-
-
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('college/', include("college.urls")),
     path('accounts/', include('registration.backends.default.urls')),
-    path('',RedirectView.as_view(url='college/')),
+    path('', RedirectView.as_view(url='college/')),
 ]

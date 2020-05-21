@@ -5,6 +5,8 @@ from django.contrib.admin import ModelAdmin
 
 from college.models import Branch
 
+from college.models import Profile
+
 
 class NoticeAdmin(ModelAdmin):
     list_display = ["subject", "cr_date"]
@@ -12,3 +14,4 @@ class NoticeAdmin(ModelAdmin):
     list_filter = ["cr_date"]
 admin.site.register(Notice,NoticeAdmin)
 admin.site.register(Branch)
+admin.site.register(Profile)

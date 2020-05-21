@@ -26,6 +26,12 @@ def home(req):
 class NoticeListView(ListView):
     model = Notice
 
+    def get_queryset(self):
+        if self.request.user.is_superuser:
+            return Notice.objects.order_by('-id')
+        else:
+            return Notice.objects.filter(branch=self.request.user.profile.branch).order_by('-id')
+
 
 @method_decorator(login_required, name="dispatch")
 class NoticeDetailView(DetailView):
