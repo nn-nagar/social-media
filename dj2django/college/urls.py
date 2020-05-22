@@ -27,8 +27,14 @@ from college import views
 
 from college.views import ProfileUpdateView
 
+from college.views import QuestionCreate
+
+from college.views import MyList
+
 urlpatterns = [
-     path('home/', views.home),
+    path('home/', views.home),
+    path('mylist/',MyList.as_view()),
+    path('question/create/', QuestionCreate.as_view(success_url="/college/home/")),
     path('notice/<int:pk>', NoticeDetailView.as_view()),
     path('notice/', NoticeListView.as_view()),
     path('profile/edit/<int:pk>/', ProfileUpdateView.as_view(success_url="/college/home/")),

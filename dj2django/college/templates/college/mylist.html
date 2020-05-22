@@ -1,0 +1,18 @@
+{% extends "base.html"%}
+
+{% block content %}
+<h1>Notice List</h1>
+<h1>Notices</h1>
+{% for n1 in notices %}
+<p>{{n1.subject}}</p>
+{% endfor %}
+
+<h1>Questions</h1>
+{% for q1 in questions %}
+<p>{{q1.subject}}</p>
+
+{% endfor %}
+{% endblock %}
+
+
+

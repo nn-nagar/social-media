@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'registration',
     'college',
+    "crispy_forms",
 ]
 
 MIDDLEWARE = [
@@ -121,10 +122,10 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
-
 EMAIL_HOST_USER = 'narennagar137@gmail.com'
 EMAIL_HOST_PASSWORD = '@137narennagar'
 
-
-
 LOGIN_REDIRECT_URL = "/"
+PROJECT_ROOT = os.path.realpath(os.path.dirname(__file__))
+MEDIA_ROOT = PROJECT_ROOT + '/static/'
+MEDIA_URL = "/media/"
