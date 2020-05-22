@@ -25,10 +25,13 @@ from college.views import NoticeDetailView
 
 from college import views
 
+from college.views import ProfileUpdateView
+
 urlpatterns = [
      path('home/', views.home),
     path('notice/<int:pk>', NoticeDetailView.as_view()),
     path('notice/', NoticeListView.as_view()),
+    path('profile/edit/<int:pk>/', ProfileUpdateView.as_view(success_url="/college/home/")),
     path('', RedirectView.as_view(url='home/')),
 
 ]

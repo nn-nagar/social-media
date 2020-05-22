@@ -2,6 +2,11 @@
 
 {% block content %}
 <h1>Notice List</h1>
+<form method="GET">
+    {% csrf_token %}
+    <input value="{{request.GET.si}}" type="text" name="si">
+    <input type="submit">
+</form>
 {% for n1 in notice_list %}
 <h3><a href="/college/notice/{{n1.id}}">{{n1.subject}}</a></h3>
 
